@@ -22,6 +22,9 @@
 <br>
 
 ## Overview
+
+This project implements a secure voice communication system, designed for use in hostile environments, including military operations, guerrilla warfare, and apocalyptic scenarios. The system leverages advanced encryption, error correction, and modulation techniques to ensure reliable and confidential voice transmission over radio frequencies.
+
 ### Features
 
 -    AES-256 Encryption: Ensures the confidentiality of transmitted messages.

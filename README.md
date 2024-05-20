@@ -41,6 +41,7 @@ Install Python 3.6 or higher.
 Install the required packages:
 pip install numpy sounddevice reedsolo cryptography
 <br>
+<br>
 
 ## Usage
 ### Running the Application
@@ -58,7 +59,7 @@ python AES256_radio.py
 - Start Communication: Begin the encrypted voice communication process.
 <br>
 
-## Main Functions
+## Main Technical Functions
 ### Key Generation and Derivation
 
 - generate_key_from_password(password: str) -> str

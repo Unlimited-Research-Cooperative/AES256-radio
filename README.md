@@ -46,60 +46,63 @@ pip install numpy sounddevice reedsolo cryptography
 ### Running the Application
 
 Save the provided Python script in a file named AES256_radio.py.
+
 Execute the script:
 
 python AES256_radio.py
 
 ### Interface Description
 
-Password Entry: Enter a password to generate the encryption key.
-Device Selection: Select audio input and output devices for both user and radio interfaces.
-Start Communication: Begin the encrypted voice communication process.
+- Password Entry: Enter a password to generate the encryption key.
+- Device Selection: Select audio input and output devices for both user and radio interfaces.
+- Start Communication: Begin the encrypted voice communication process.
 
 ## Main Functions
 ### Key Generation and Derivation
 
-generate_key_from_password(password: str) -> str
-get_key_from_password(password: str, encoded_key: str) -> bytes
+- generate_key_from_password(password: str) -> str
+- get_key_from_password(password: str, encoded_key: str) -> bytes
 
 ### Encryption and Decryption
 
-encrypt_message(message: bytes, key: bytes) -> str
-decrypt_message(encrypted_message: str, key: bytes) -> bytes
+- encrypt_message(message: bytes, key: bytes) -> str
+- decrypt_message(encrypted_message: str, key: bytes) -> bytes
 
 ### AFSK Modulation
 
-text_to_afsk(text, baud_rate=1200, mark_freq=1200, space_freq=2200, sample_rate=48000)
-afsk_to_text(signal, baud_rate=1200, mark_freq=1200, space_freq=2200, sample_rate=48000)
+- text_to_afsk(text, baud_rate=1200, mark_freq=1200, space_freq=2200, sample_rate=48000)
+- afsk_to_text(signal, baud_rate=1200, mark_freq=1200, space_freq=2200, sample_rate=48000)
 
 ### Reed-Solomon Encoding
 
-encode_reed_solomon(data)
-decode_reed_solomon(data)
+- encode_reed_solomon(data)
+- decode_reed_solomon(data)
 
 ### Preamble Handling
 
-add_preamble(data, preamble="101010101010")
-remove_preamble(data, preamble="101010101010")
+- add_preamble(data, preamble="101010101010")
+- remove_preamble(data, preamble="101010101010")
 
 ### Transmission and Reception
 
-transmit_message(key, message_text)
-receive_message(key, afsk_signal)
+- transmit_message(key, message_text)
+- receive_message(key, afsk_signal)
 
 ### Example Workflow
 
-Key Generation: Generates an encryption key from the provided password.
-Message Encryption: Encrypts the input message.
-Error Correction: Applies Reed-Solomon encoding.
-Preamble Addition: Adds a preamble for synchronization.
-Modulation: Converts the message to an AFSK signal for transmission.
-Reception: Receives the AFSK signal and reverses the above steps to retrieve the original message.
+- Key Generation: Generates an encryption key from the provided password.
+- Message Encryption: Encrypts the input message.
+- Error Correction: Applies Reed-Solomon encoding.
+- Preamble Addition: Adds a preamble for synchronization.
+- Modulation: Converts the message to an AFSK signal for transmission.
+- Reception: Receives the AFSK signal and reverses the above steps to retrieve the original message.
 
 ### Important Notes
 
 Ensure that the same password is used on both the transmitting and receiving ends to generate matching encryption keys.
+
 Test the system thoroughly in a controlled environment before deploying it in real-world scenarios.
+
 The system relies on proper selection of audio devices for effective operation. Verify device configurations and compatibility.
 
 

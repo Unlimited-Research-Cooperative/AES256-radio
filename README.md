@@ -46,11 +46,17 @@ pip install numpy sounddevice reedsolo cryptography
 ## Usage
 ### Running the Application
 
+Connect your radio mic line to a pc headphones line (not the headphones line you will use to listen)
+
+Connect your radio headphones line to a pc mic line (not the mic line you will use to speak into)
+
 Save the provided Python script in a file named AES256_radio.py.
 
 Execute the script:
 
 python AES256_radio.py
+
+
 
 ### Interface Description
 
